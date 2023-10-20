@@ -54,7 +54,7 @@ public class RadioTest {
     @Test
     public void shouldSetMinRadioStation() {
         Radio radio = new Radio();
-
+        radio.setCurrentRadioStation(4);
         radio.setMinRadioStation();
 
         int expected = 0;
@@ -66,7 +66,7 @@ public class RadioTest {
     @Test
     public void shouldSetMaxVolume() {
         Radio radio = new Radio();
-
+        radio.setCurrentVolume(10);
         radio.setMaxVolume();
 
         int expected = 100;
@@ -78,7 +78,7 @@ public class RadioTest {
     @Test
     public void shouldSetMinVolume() {
         Radio radio = new Radio();
-
+        radio.setCurrentVolume(33);
         radio.setMinVolume();
 
         int expected = 0;
@@ -90,7 +90,7 @@ public class RadioTest {
     @Test
     public void shouldIncreaseRadioStationThroughMaxToMin() {
         Radio radio = new Radio();
-
+        radio.setCurrentRadioStation(4);
         radio.setMaxRadioStation();
         radio.next();
 
@@ -103,7 +103,7 @@ public class RadioTest {
     @Test
     public void shouldDecreaseRadioStationThroughMinToMax() {
         Radio radio = new Radio();
-
+        radio.setCurrentRadioStation(2);
         radio.setMinRadioStation();
         radio.prev();
 
