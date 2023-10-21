@@ -6,8 +6,8 @@ public class RadioTest {
     @Test
     public void shouldSetRadioStation() {
         Radio radio = new Radio();
-        radio.setCurrentRadioStation(5);
-        int expected = 5;
+        radio.setCurrentRadioStation(6);
+        int expected = 6;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -32,6 +32,15 @@ public class RadioTest {
 
     @Test
     public void shouldSetMaxRadioStation() {
+        Radio radio = new Radio(55);
+        radio.setMaxRadioStation();
+        int expected = 54;
+        int actual = radio.getCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSetMaxRadioStationDefault() {
         Radio radio = new Radio();
         radio.setMaxRadioStation();
         int expected = 9;
@@ -41,7 +50,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetMinRadioStation() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(56);
         radio.setCurrentRadioStation(4);
         radio.setMinRadioStation();
         int expected = 0;
@@ -71,7 +80,7 @@ public class RadioTest {
 
     @Test
     public void shouldIncreaseRadioStationThroughMaxToMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(99);
         radio.setCurrentRadioStation(4);
         radio.setMaxRadioStation();
         radio.next();
@@ -81,12 +90,23 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldDecreaseRadioStationThroughMinToMax() {
+    public void shouldDecreaseRadioStationThroughMinToMaxDefault() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(2);
         radio.setMinRadioStation();
         radio.prev();
         int expected = 9;
+        int actual = radio.getCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldDecreaseRadioStationThroughMinToMax() {
+        Radio radio = new Radio(78);
+        radio.setCurrentRadioStation(2);
+        radio.setMinRadioStation();
+        radio.prev();
+        int expected = 77;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
