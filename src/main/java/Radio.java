@@ -56,7 +56,6 @@ public class Radio {
             return;
         }
         currentRadioStation++;
-
     }
 
     public void prev() {
@@ -65,8 +64,6 @@ public class Radio {
             return;
         }
         currentRadioStation--;
-
-
     }
 
     public void volumeUp() {
@@ -74,9 +71,7 @@ public class Radio {
             setCurrentVolume(100);
             return;
         }
-
-            currentVolume++;
-
+        currentVolume++;
     }
 
     public void volumeDown() {
@@ -84,7 +79,6 @@ public class Radio {
             setCurrentVolume(0);
             return;
         }
-            currentVolume--;
-
+        currentVolume--;
     }
 }
