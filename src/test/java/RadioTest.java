@@ -28,7 +28,6 @@ public class RadioTest {
         int expected = 0;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
@@ -79,7 +78,6 @@ public class RadioTest {
         int expected = 0;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
@@ -91,7 +89,6 @@ public class RadioTest {
         int expected = 9;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
@@ -112,9 +109,7 @@ public class RadioTest {
         int expected = 100;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
-
     }
-
 
     @Test
     public void shouldNotVolumeDownWhenMin() {
@@ -124,7 +119,6 @@ public class RadioTest {
         int expected = 0;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
@@ -134,7 +128,6 @@ public class RadioTest {
         int expected = 100;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
@@ -144,7 +137,6 @@ public class RadioTest {
         int expected = 0;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
@@ -193,7 +185,6 @@ public class RadioTest {
         int expected = 9;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
@@ -203,9 +194,7 @@ public class RadioTest {
         radio.volumeUp();
         int expected = 100;
         int actual = radio.getCurrentVolume();
-
         Assertions.assertEquals(expected, actual);
-
     }
 
     @Test
@@ -216,6 +205,5 @@ public class RadioTest {
         int expected = 99;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
-
     }
 }
